@@ -1,0 +1,179 @@
+20-04-2020-10:59:21,460 [main] INFO  App: - *** GIPKYCService 1.0 Starting...
+20-04-2020-10:59:21,466 [main] INFO  Server: - Starting server...
+20-04-2020-10:59:21,844 [main] INFO  Server: - Server started in 376ms; listening on 0.0.0.0:8670
+20-04-2020-10:59:21,844 [main] INFO  App: - *** GIPKYCService 1.0 started in 387 ms. Ready to receive requests
+20-04-2020-10:59:35,010 [XNIO-1 I/O-1] INFO  EchoService: - Echo service TAT 19 ms
+20-04-2020-10:59:36,022 [XNIO-1 I/O-1] INFO  EchoService: - Echo service TAT 0 ms
+20-04-2020-10:59:36,882 [XNIO-1 I/O-1] INFO  EchoService: - Echo service TAT 1 ms
+20-04-2020-10:59:47,592 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - >>> new request received: bankcode=863&account=233209157113 from source IP: 0:0:0:0:0:0:0:1
+20-04-2020-10:59:47,592 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - IP WHITELISTING DISABLED.
+20-04-2020-10:59:47,595 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  payload <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="com.ghipss.gip"><soapenv:Header/>
+<soapenv:Header/>
+<soapenv:Body>
+   <com:GIPTransactionOp>
+      <ReqGIPTransaction>
+         <Amount>000000000000</Amount>
+         <datetime>200420105947</datetime>
+         <TrackingNum>020657</TrackingNum>
+         <FunctionCode>240</FunctionCode>
+         <OrigineBank>300380</OrigineBank>
+         <DestBank>300594</DestBank>
+         <SessionID>841828837277</SessionID>
+         <ChannelCode>001</ChannelCode>
+         <NameToDebit>N/A</NameToDebit>
+         <AccountToDebit>0209157113</AccountToDebit>
+         <NameToCredit>Etranzact Gh</NameToCredit>
+         <AccountToCredit>0209157113</AccountToCredit>
+         <Narration>PPayment</Narration>
+      </ReqGIPTransaction>
+   </com:GIPTransactionOp>
+</soapenv:Body>
+</soapenv:Envelope>
+20-04-2020-10:59:48,242 [XNIO-1 I/O-1] INFO  SuperHttpClient: - connecting to url >>http://localhost:9999/mock/gipdirect
+20-04-2020-10:59:48,325 [XNIO-1 I/O-1] INFO  SuperHttpClient: - RESPONSE HEADERS >> HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 10:59:48 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-10:59:48,329 [XNIO-1 I/O-1] INFO  SuperHttpClient: - TAT [CONNECT+DATA] >> 87
+20-04-2020-10:59:48,329 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response code received: 200
+20-04-2020-10:59:48,329 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response header received: HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 10:59:48 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-10:59:48,329 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response body received: <?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:GIPTransactionOpResponse xmlns:ns2="com.ghipss.gip">
+         <GIPTransactionResponse>
+            <Amount>000000000000</Amount>
+            <datetime>2004200418</datetime>
+            <TrackingNum>147981</TrackingNum>
+            <FunctionCode>230</FunctionCode>
+            <OrigineBank>300380</OrigineBank>
+            <DestBank>300594</DestBank>
+            <SessionID>852317112836</SessionID>
+            <AccountToDebit>00209157113</AccountToDebit>
+            <NameToCredit>nii ayite aryeh</NameToCredit>
+            <AccountToCredit>0209157113</AccountToCredit>
+            <Narration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <OneTimePassword xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <ActCode>000</ActCode>
+            <AprvCode>000000</AprvCode>
+         </GIPTransactionResponse>
+      </ns2:GIPTransactionOpResponse>
+   </soap:Body>
+</soap:Envelope>
+20-04-2020-10:59:48,337 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  ActCode 000
+20-04-2020-10:59:48,337 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  :: nii ayite aryeh Verification successful
+20-04-2020-10:59:48,337 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  Response: KYCResponse{error=00, name=nii ayite aryeh, description=SUCCESFULL}
+20-04-2020-10:59:48,338 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - <<< 863***233209157113  end of request , TAT 748 ms
+20-04-2020-11:01:29,216 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - >>> new request received: bankGcode=863&account=233209157113 from source IP: 0:0:0:0:0:0:0:1
+20-04-2020-11:01:29,216 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - IP WHITELISTING DISABLED.
+20-04-2020-11:01:29,216 [XNIO-1 I/O-1] WARN  GIPKYCHandler: - Invalid request. Uknown parameters
+20-04-2020-11:01:29,217 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - <<<  end of request , TAT 1 ms
+20-04-2020-11:01:59,405 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - >>> new request received: bankcode=863&account=233209157113 from source IP: 0:0:0:0:0:0:0:1
+20-04-2020-11:01:59,405 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - IP WHITELISTING DISABLED.
+20-04-2020-11:01:59,405 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  payload <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="com.ghipss.gip"><soapenv:Header/>
+<soapenv:Header/>
+<soapenv:Body>
+   <com:GIPTransactionOp>
+      <ReqGIPTransaction>
+         <Amount>000000000000</Amount>
+         <datetime>200420110159</datetime>
+         <TrackingNum>173505</TrackingNum>
+         <FunctionCode>240</FunctionCode>
+         <OrigineBank>300380</OrigineBank>
+         <DestBank>300594</DestBank>
+         <SessionID>125002274541</SessionID>
+         <ChannelCode>001</ChannelCode>
+         <NameToDebit>N/A</NameToDebit>
+         <AccountToDebit>0209157113</AccountToDebit>
+         <NameToCredit>Etranzact Gh</NameToCredit>
+         <AccountToCredit>0209157113</AccountToCredit>
+         <Narration>PPayment</Narration>
+      </ReqGIPTransaction>
+   </com:GIPTransactionOp>
+</soapenv:Body>
+</soapenv:Envelope>
+20-04-2020-11:01:59,408 [XNIO-1 I/O-1] INFO  SuperHttpClient: - connecting to url >>http://localhost:9999/mock/gipdirect
+20-04-2020-11:01:59,414 [XNIO-1 I/O-1] INFO  SuperHttpClient: - RESPONSE HEADERS >> HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 11:01:59 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-11:01:59,414 [XNIO-1 I/O-1] INFO  SuperHttpClient: - TAT [CONNECT+DATA] >> 6
+20-04-2020-11:01:59,414 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response code received: 200
+20-04-2020-11:01:59,414 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response header received: HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 11:01:59 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-11:01:59,414 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response body received: <?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:GIPTransactionOpResponse xmlns:ns2="com.ghipss.gip">
+         <GIPTransactionResponse>
+            <Amount>000000000000</Amount>
+            <datetime>2004200418</datetime>
+            <TrackingNum>147981</TrackingNum>
+            <FunctionCode>230</FunctionCode>
+            <OrigineBank>300380</OrigineBank>
+            <DestBank>300594</DestBank>
+            <SessionID>852317112836</SessionID>
+            <AccountToDebit>00209157113</AccountToDebit>
+            <NameToCredit>nii ayite aryeh</NameToCredit>
+            <AccountToCredit>0209157113</AccountToCredit>
+            <Narration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <OneTimePassword xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <ActCode>000</ActCode>
+            <AprvCode>000000</AprvCode>
+         </GIPTransactionResponse>
+      </ns2:GIPTransactionOpResponse>
+   </soap:Body>
+</soap:Envelope>
+20-04-2020-11:01:59,417 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  ActCode 000
+20-04-2020-11:01:59,418 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  :: nii ayite aryeh Verification successful
+20-04-2020-11:01:59,418 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  Response: KYCResponse{error=00, name=nii ayite aryeh, description=SUCCESFULL}
+20-04-2020-11:01:59,418 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - <<< 863***233209157113  end of request , TAT 13 ms
+20-04-2020-11:02:15,668 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - >>> new request received: bankcode=863&account=233209157113 from source IP: 0:0:0:0:0:0:0:1
+20-04-2020-11:02:15,668 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - IP WHITELISTING DISABLED.
+20-04-2020-11:02:15,668 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  payload <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="com.ghipss.gip"><soapenv:Header/>
+<soapenv:Header/>
+<soapenv:Body>
+   <com:GIPTransactionOp>
+      <ReqGIPTransaction>
+         <Amount>000000000000</Amount>
+         <datetime>200420110215</datetime>
+         <TrackingNum>364510</TrackingNum>
+         <FunctionCode>240</FunctionCode>
+         <OrigineBank>300380</OrigineBank>
+         <DestBank>300594</DestBank>
+         <SessionID>456165815428</SessionID>
+         <ChannelCode>001</ChannelCode>
+         <NameToDebit>N/A</NameToDebit>
+         <AccountToDebit>0209157113</AccountToDebit>
+         <NameToCredit>Etranzact Gh</NameToCredit>
+         <AccountToCredit>0209157113</AccountToCredit>
+         <Narration>PPayment</Narration>
+      </ReqGIPTransaction>
+   </com:GIPTransactionOp>
+</soapenv:Body>
+</soapenv:Envelope>
+20-04-2020-11:02:15,669 [XNIO-1 I/O-1] INFO  SuperHttpClient: - connecting to url >>http://localhost:9999/mock/gipdirect
+20-04-2020-11:02:15,675 [XNIO-1 I/O-1] INFO  SuperHttpClient: - RESPONSE HEADERS >> HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 11:02:15 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-11:02:15,675 [XNIO-1 I/O-1] INFO  SuperHttpClient: - TAT [CONNECT+DATA] >> 5
+20-04-2020-11:02:15,675 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response code received: 200
+20-04-2020-11:02:15,675 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response header received: HttpResponseProxy{HTTP/1.1 200 OK [Connection: keep-alive, Content-Length: 1082, Date: Mon, 20 Apr 2020 11:02:15 GMT] ResponseEntityProxy{[Content-Length: 1082,Chunked: false]}}
+20-04-2020-11:02:15,675 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  HTTP Response body received: <?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:GIPTransactionOpResponse xmlns:ns2="com.ghipss.gip">
+         <GIPTransactionResponse>
+            <Amount>000000000000</Amount>
+            <datetime>2004200418</datetime>
+            <TrackingNum>147981</TrackingNum>
+            <FunctionCode>230</FunctionCode>
+            <OrigineBank>300380</OrigineBank>
+            <DestBank>300594</DestBank>
+            <SessionID>852317112836</SessionID>
+            <AccountToDebit>00209157113</AccountToDebit>
+            <NameToCredit>nii ayite aryeh</NameToCredit>
+            <AccountToCredit>0209157113</AccountToCredit>
+            <Narration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <OneTimePassword xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+            <ActCode>000</ActCode>
+            <AprvCode>000000</AprvCode>
+         </GIPTransactionResponse>
+      </ns2:GIPTransactionOpResponse>
+   </soap:Body>
+</soap:Envelope>
+20-04-2020-11:02:15,678 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  ActCode 000
+20-04-2020-11:02:15,678 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  :: nii ayite aryeh Verification successful
+20-04-2020-11:02:15,678 [XNIO-1 I/O-1] INFO  GIPProcessor: - 863***233209157113  Response: KYCResponse{error=00, name=nii ayite aryeh, description=SUCCESFULL}
+20-04-2020-11:02:15,679 [XNIO-1 I/O-1] INFO  GIPKYCHandler: - <<< 863***233209157113  end of request , TAT 12 ms
